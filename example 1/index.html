@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<title>Axis Capital</title>
+	<link rel="stylesheet" href="css/style.css">
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<form id="MyForm" name="MyForm" action="form.html">
+	<div class="help" ></div>
+	<div>
+		<label for="Name">Address</label>
+		<input id="Name" class="address" name="Name" type="text" />
+	</div>
+</form>
+
+<!-- javascripts
+================================================= -->
+<script src="https://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
+<script src="http://code.jquery.com/jquery.min.js"></script>
+<script src="js/custom.js"></script>
+<script type="text/javascript">
+
+/* Activating google stuff
+-------------------------------------------------- */
+
+
+$('.address').live('focusout', function(e){
+	if ($(".send-address-here").length == 0 ) {
+
+        $(this).removeClass("send-address-here");
+		var address_element = $(e.currentTarget);
+
+        address_element.addClass("send-address-here");
+
+        FullAddressValidator(address_element.val(), address_element, null);
+
+		$(e.currentTarget).parents('.quote_form').prepend($('.help'));
+	}
+});
+
+
+function FullAddressValidator(value, element, paras) {
+
+    var CurrentAddress = value;
+    
+    if (value.length == 0) {
+		$(".help").fadeIn().html("We're not sure what you mean ");
+    }
+    
+    if ($(element).data("LastAddressValidated") == CurrentAddress) {
+        return $(element).data("IsValid");
+    }
+    
+    $(element).data("IsChecking", true);
+    $(element).data("LastAddressValidated", CurrentAddress);
+    
+    CurrentAddress = CurrentAddress.replace(/\n/g, "");
+    
+    var geocoder = new google.maps.Geocoder();
+    geocoder.geocode({
+        'address': CurrentAddress
+        }, function (results, status) {
+        
+        if (status == google.maps.GeocoderStatus.OK) {
+            
+            var address = results[0].formatted_address;
+            
+            numCommas = address.match(/,/g).length;
+            $(".arrow-down").fadeIn();
+            $(".help").slideDown().html("<i class='icon-info-sign'></i> <b>Did you mean:</b> " + "<span>" + address + "</span> " + " <a class='no'>No</a>  <a class='yes'>Yes</a>");
+			$("input").attr('disabled','disabled');
+            $(element).data("LastAddressValidated", address);
+            $(element).data("IsValid", true);
+        
+        } 
+
+        else {
+	        $(element).data("IsValid", false);
+			$(".help").slideDown().html("<i class='icon-question-sign'></i> <b>We're not sure what you mean</b> <a class='no'>Click to continue hints</a>  ");
+    	}
+ 
+	});
+}
+</script>
+</body>
+</html>
