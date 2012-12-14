@@ -11,4 +11,4 @@
  * Color Me SASS v1.0
  * Built and Designed by Richard Bray
  *
- */::selection{color:#fff;text-shadow:none;background:#7ba05b}.hero{background-color:brown;padding:6em 1em 2em 1em;color:#fff;text-align:center;border-bottom:1em solid #ccc}.hero a{color:#fff}.hero h1{font-family:'Cookie', cursive;font-size:10em;padding-bottom:.5em;font-weight:100;letter-spacing:0.02em}.hero h4{font-weight:normal;line-height:1.6em}
+ */::selection{color:#fff;text-shadow:none;background:#7ba05b}.hero{background-color:brown;padding:6em 1em 2em 1em;color:#fff;text-align:center;border-bottom:1em solid #ccc}.hero a{color:#fff;-webkit-transition:0.3s;-moz-transition:0.3s;-o-transition:0.3s;transition:0.3s}.hero a:hover{color:#7a0000}.hero h1{font-family:'Cookie', cursive;font-size:11em;padding-bottom:.5em;font-weight:100;letter-spacing:0.02em}.hero h3{font-weight:normal;line-height:1.6em;font-size:1.6em}
