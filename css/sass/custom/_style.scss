@@ -1,0 +1,35 @@
+
+/* General Page Styles
+-------------------------------------------------- */
+
+::selection {
+	color: #fff;
+	text-shadow: none;
+	background: $greenAsparagus;
+}
+
+
+/* Hero Style
+-------------------------------------------------- */
+
+.hero{
+	background-color: $redAuburn;
+	padding: 6em 1em 2em 1em;
+	color: $white;
+	text-align:center;
+	border-bottom: 1em solid $inputBorder;
+	a{
+		color: $white;
+	}
+	h1{
+		font-family: 'Cookie', cursive;
+		font-size:10em;
+		padding-bottom: .5em;
+		font-weight: 100;
+		letter-spacing: 0.02em;
+	}
+	h4{
+		font-weight:normal;
+		line-height: 1.6em;
+	}
+}
