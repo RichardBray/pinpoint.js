@@ -46,10 +46,25 @@ $('.go').live('click', function(e){
     }
 });
 
+
+/*Code for pressing Enter
+-------------------------------------------------- */
+
+$(".name").keypress(function(event) {
+  if ( event.which == 13 ) {
+     event.preventDefault();
+        $('.address').removeClass("send-address-here");
+        var name = $('.name');
+        $('.address').addClass("send-address-here");
+        FullAddressValidator(name.val(), name, null);     
+   }
+});
+
+
 /* Yes, No and Reset buttons
 -------------------------------------------------- */
 
-$(".help").html("Type in the first line of you address, a famous city or a landmark and hit <b>Go</b>.<br> (Not Enter)");
+$(".help").html("Type in the first line of you address, a famous city or a landmark and hit <b>Go</b> or <b>Enter</b>");
 
 $(".yes").live("click", function(e) {
     $(".send-address-here").val($(".yes").siblings("span").text());
