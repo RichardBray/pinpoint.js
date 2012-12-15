@@ -23,7 +23,7 @@ function FullAddressValidator(value, element, paras) {
             var address = results[0].formatted_address;
             numCommas = address.match(/,/g).length;
             $(".arrow-down").fadeIn();
-            $(".help").slideDown().html("<b>Do you mean:</b> " + "<span>" + address + "</span> " + " <a class='no'>No</a>  <a class='yes'>Yes</a>");
+            $(".help").slideDown().html("<b>Do you mean:</b> " + "<span>" + address + "</span> " + " <a class='no'>Nope</a>  <a class='yes'>Yep</a>");
             $(element).data("LastAddressValidated", address);
             $(element).data("IsValid", true);
         } 
@@ -37,7 +37,7 @@ function FullAddressValidator(value, element, paras) {
 /* Extra cool jquery stuff (which you kinda need)
 -------------------------------------------------- */
 
-$('.go').live('click', 'focusout', function(e){
+$('.go').live('click', function(e){
     if ($(".send-address-here").length == 0 ) {
         $('.address').removeClass("send-address-here");
         var name = $('.name');
@@ -49,21 +49,20 @@ $('.go').live('click', 'focusout', function(e){
 /* Yes, No and Reset buttons
 -------------------------------------------------- */
 
-$(".help").hide();
-$(".arrow-down").hide();
+$(".help").html("Type in the first line of you address, a famous city or a landmark and hit <b>Go</b>.");
 
 $(".yes").live("click", function(e) {
     $(".send-address-here").val($(".yes").siblings("span").text());
     $(".send-address-here").removeClass("send-address-here")
-    $(e.currentTarget).parent().slideUp();
+    $(".help").html("<b>Awesome!</b>");
 });
 
 $(".no").live("click", function(e) {
     $(".send-address-here").removeClass("send-address-here")
-    $(e.currentTarget).parent().slideUp();
+    $(".help").html("<b>Aww shucks.</b> <br>Maybe being more specific.");
 });
 
 $(".reset").click(function (){
     $('.name, .address').val("");
-
+    $(".help").html("<b>Alright you know the drill.</b>");
 });

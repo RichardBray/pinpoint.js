@@ -8,6 +8,22 @@
 	background: $greenAsparagus;
 }
 
+.go, .yes, .no, .reset{
+	&:hover{
+		cursor:pointer;
+	}
+}
+
+.layout{
+	margin-top:3.5em;
+	h1{
+		font-family: 'Cookie', cursive;
+		color: $redAuburn;
+		text-align:center;
+		font-size:5.5em;
+		font-weight: 100;
+	}
+}
 
 /* Hero Section Styles
 -------------------------------------------------- */
@@ -37,4 +53,78 @@
 		line-height: 1.6em;
 		font-size: 1.6em;
 	}
+}
+
+/* Demo Section Styles
+-------------------------------------------------- */
+
+.demo-eg{
+	text-align:center;
+}
+
+.demo-form{
+	textarea{
+		width:20em;
+		margin-top: 1em;
+		margin-bottom: 2em;
+		height:5em;
+	}
+	input{
+		margin-right: 2em;
+	}
+}
+
+.demo-sug {
+	margin: 2.5em auto;	
+	width: 18em;
+	height: 5em;	
+	position: relative;
+	font-size: 1.3em;
+	padding: 1em 1em 1.8em 1em;
+	line-height: 1.4em;
+	border: 0.15em solid $redAuburn;
+	color: $redAuburn;
+	@include border-radius(0.3em);
+}
+
+.demo-sug:after, .demo-sug:before {
+	top: 100%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+}
+
+.demo-sug:after {
+	border-top-color: $redAuburn;
+	border-width: 30px;
+	left: 50%;
+	margin-left: -30px;
+}
+.demo-sug:before {
+	border-top-color: $redAuburn;
+	border-width: 36px;
+	left: 50%;
+	margin-left: -36px;
+}
+
+.go, .reset{
+	@include border-radius(0.15em);
+	@include transition(0.3s);
+	padding: 6px 10px;
+}
+
+.go{
+	font-weight:bold;
+	background-color: $redAuburn;
+	color: $white;	
+	&:hover{
+		background-color: darken($redAuburn, 10%);
+	}
+}
+
+.reset{
+	border: 0.15em solid $redAuburn;
+	color: $redAuburn;
 }

@@ -22,7 +22,6 @@ function FullAddressValidator(value, element, paras) {
         if (status == google.maps.GeocoderStatus.OK) {
             var address = results[0].formatted_address;
             numCommas = address.match(/,/g).length;
-            $(".arrow-down").fadeIn();
             $(".help").slideDown().html("<b>Do you mean:</b> " + "<span>" + address + "</span> " + " <a class='no'>No</a>  <a class='yes'>Yes</a>");
             $(element).data("LastAddressValidated", address);
             $(element).data("IsValid", true);
@@ -37,7 +36,7 @@ function FullAddressValidator(value, element, paras) {
 /* Extra cool jquery stuff (which you kinda need)
 -------------------------------------------------- */
 
-$('.go').live('click', 'focusout', function(e){
+$('.go').live('click', function(e){
     if ($(".send-address-here").length == 0 ) {
         $('.address').removeClass("send-address-here");
         var name = $('.name');
@@ -48,9 +47,6 @@ $('.go').live('click', 'focusout', function(e){
 
 /* Yes, No and Reset buttons
 -------------------------------------------------- */
-
-$(".help").hide();
-$(".arrow-down").hide();
 
 $(".yes").live("click", function(e) {
     $(".send-address-here").val($(".yes").siblings("span").text());
