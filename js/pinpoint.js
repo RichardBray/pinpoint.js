@@ -23,7 +23,7 @@ function FullAddressValidator(value, element, paras) {
             var address = results[0].formatted_address;
             numCommas = address.match(/,/g).length;
             $(".arrow-down").fadeIn();
-            $(".help").slideDown().html("<b>Do you mean:</b> " + "<span>" + address + "</span> " + " <a class='no'>Nope</a>  <a class='yes'>Yep</a>");
+            $(".help").slideDown().html("<b>Do you mean:</b> " + "<span>" + address + "</span> " + " <a class='yes'>Yep</a> <a class='no'>Nope</a>");
             $(element).data("LastAddressValidated", address);
             $(element).data("IsValid", true);
         } 
@@ -49,7 +49,7 @@ $('.go').live('click', function(e){
 /* Yes, No and Reset buttons
 -------------------------------------------------- */
 
-$(".help").html("Type in the first line of you address, a famous city or a landmark and hit <b>Go</b>.");
+$(".help").html("Type in the first line of you address, a famous city or a landmark and hit <b>Go</b>.<br> (Not Enter)");
 
 $(".yes").live("click", function(e) {
     $(".send-address-here").val($(".yes").siblings("span").text());
