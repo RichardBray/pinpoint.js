@@ -15,7 +15,7 @@ Install (in 3 easy steps)
 
 1. Load up the Google Maps API
 
-	<script src="https://maps.google.com/maps/api/js?sensor=false"></script>
+		<script src="https://maps.google.com/maps/api/js?sensor=false"></script>
 
 
 2. Link your page to pinpoint.js (obviously)
@@ -38,10 +38,13 @@ Install (in 3 easy steps)
 Class names
 ------------
 
-.help - where the help message will go
-.name - where the name of the location will go
-.go - the button you click to register the searched location
-.address - where the full address will show up after 'yes' is clicked	
+>.help - where the help message will go
+>
+>.name - where the name of the location will go
+>
+>.go - the button you click to register the searched location
+>
+>.address - where the full address will show up after 'yes' is clicked	
 
 
 Documentation
