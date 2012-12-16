@@ -20,20 +20,20 @@ Install (in 3 easy steps)
 
 2. Link your page to pinpoint.js (obviously)
 
-	<script src="js/prism.js"></script>
+		<script src="js/prism.js"></script>
 
 
 3. Create a form with the relevant class names
 
-	<form>
-		<div class="help"></div>
-		<div>
-			<label>Name</label>
-			<input class="name">
-	        <span class="go">Go</span><br>
-	        <textarea class="address"></textarea><br>
-		</div>
-	</form>	
+		<form>
+			<div class="help"></div>
+			<div>
+				<label>Name</label>
+				<input class="name">
+		        <span class="go">Go</span><br>
+		        <textarea class="address"></textarea><br>
+			</div>
+		</form>	
 
 Class names
 ------------
