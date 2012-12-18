@@ -7,7 +7,7 @@
 @include grid-core($gridColumnWidth, $gridGutterWidth);
 
 // Fluid (940px)
-@include grid-fluid($fluidGridColumnWidth, $fluidGridGutterWidth);
+//@include grid-fluid($fluidGridColumnWidth, $fluidGridGutterWidth);
 
 // Reset utility classes due to specificity
 [class*="span"].hide,
@@ -15,7 +15,7 @@
   display: none;
 }
 
-[class*="span"].pull-right,
-.row-fluid [class*="span"].pull-right {
-  float: right;
-}
+//[class*="span"].pull-right,
+//.row-fluid [class*="span"].pull-right {
+ // float: right;
+//}
